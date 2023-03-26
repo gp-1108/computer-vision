@@ -1,3 +1,5 @@
+#pragma once
+#include "helper_functions.h"
 #include <opencv2/highgui.hpp>
 #include <iostream>
  

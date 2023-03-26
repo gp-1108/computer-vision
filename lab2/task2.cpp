@@ -7,7 +7,7 @@
 #include <opencv2/imgproc.hpp>
 #include <iostream>
 #include <opencv2/imgcodecs.hpp>
-#include "helper_functions.cpp"
+#include "helper_functions.h"
 
 using namespace cv;
 
