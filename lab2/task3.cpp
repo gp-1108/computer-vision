@@ -7,7 +7,7 @@
 #include <opencv2/imgproc.hpp>
 #include <iostream>
 #include <opencv2/imgcodecs.hpp>
-#include "helper_functions.cpp"
+#include "helper_functions.h"
 #include <opencv2/core/types.hpp>
 
 using namespace cv;
@@ -24,7 +24,7 @@ int main (int argc, char **argv) {
   // Showing color image
   imshow("gray scale", img);
   waitKey(0);
-  // destroyWindow("gray scale");
+  destroyAllWindows();
 
 
   Mat gray_scale_img(img.rows, img.cols, CV_8U);
@@ -38,12 +38,12 @@ int main (int argc, char **argv) {
 
     Mat min_filtered = minFilter(gray_scale_img, kernel_size);
     char min_filename[50];
-    sprintf(min_filename, "./filtered/min_filtered_kernel_%d.png", kernel_size);
+    sprintf(min_filename, "./filtered/min_filtered_kernel_%d.jpg", kernel_size);
     imwrite(min_filename, min_filtered);
 
     Mat max_filtered = maxFilter(gray_scale_img, kernel_size);
     char max_filename[50];
-    sprintf(max_filename, "./filtered/max_filtered_kernel_%d.png", kernel_size);
+    sprintf(max_filename, "./filtered/max_filtered_kernel_%d.jpg", kernel_size);
     imwrite(max_filename, max_filtered);
 
     Mat median_filtered(gray_scale_img.rows, gray_scale_img.cols, CV_8U);
