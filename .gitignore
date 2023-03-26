@@ -1,4 +1,5 @@
 /*/exec
 /*/.vscode
 .vscode
-/lab2/filtered/
+*.zip
+/*/build
