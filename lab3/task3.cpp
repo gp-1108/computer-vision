@@ -12,13 +12,16 @@ void on_click(int event, int x, int y, int flags, void* userdata) {
     return;
   }
   Mat image = * (Mat*) userdata;
+
+  int ray_x = (Y_NEIGHBORHOOD - 1) / 2;
+  int ray_y = (Y_NEIGHBORHOOD - 1) / 2;
   
-  if ( y + Y_NEIGHBORHOOD > image.rows || x + X_NEIGHBORHOOD > image.cols) {
+  if (x - ray_x < 0 || x + ray_x >= image.cols || y - ray_y < 0 || y + ray_y >= image.rows) {
     // Out of bound
     return;
   }
 
-  Rect rect(x, y, X_NEIGHBORHOOD, Y_NEIGHBORHOOD);
+  Rect rect(x - ray_x, y - ray_y, X_NEIGHBORHOOD, Y_NEIGHBORHOOD);
   Scalar mean = cv::mean(image(rect));
 
   printf("The mean is: (%f,%f,%f)\n", mean[2], mean[1], mean[0]);
