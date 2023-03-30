@@ -4,14 +4,13 @@
 #define Y_NEIGHBORHOOD 9
 #define X_NEIGHBORHOOD 9
 
-using namespace cv;
-using namespace std;
-
 struct Click_Structure {
   bool has_mask;
   cv::Mat image;
 };
 
+using namespace cv;
+using namespace std;
 
 // One click to show the mask, one click to make it fade out and reveal the original image
 void on_click(int event, int x, int y, int flags, void* userdata) {
