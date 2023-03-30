@@ -11,3 +11,7 @@ Image channels manipulation and applying filters to images such as:
 * Max filtere (manually implemented)
 * Min filter (manually implemented)
 Image evaluation with histograms and histogram equalization.
+
+
+## Lab 3:
+Masking images based on color.
