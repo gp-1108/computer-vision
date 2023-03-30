@@ -24,8 +24,8 @@ target_link_libraries(exec_task2 PRIVATE ${OpenCV_LIBS})
 add_executable(exec_task3 task3.cpp helper_functions.cpp)
 target_link_libraries(exec_task3 PRIVATE ${OpenCV_LIBS})
 
-add_executable(exec_task4 task4.cpp helper_functions.cpp)
+add_executable(exec_task4 task4.cpp)
 target_link_libraries(exec_task4 PRIVATE ${OpenCV_LIBS})
 
-add_executable(exec_task5 task5.cpp helper_functions.cpp)
+add_executable(exec_task5 task5.cpp)
 target_link_libraries(exec_task5 PRIVATE ${OpenCV_LIBS})
