@@ -14,4 +14,4 @@ Image evaluation with histograms and histogram equalization.
 
 
 ## Lab 3:
-Masking images based on color.
+Masking images based on color. Learnng new constructors, the usage of cv::Rect() and other useful functions for color sampling.
