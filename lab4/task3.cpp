@@ -1,3 +1,6 @@
+/*
+  I was not able to fill the street as asked
+*/
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <iostream>
@@ -36,7 +39,7 @@ int main (int argc, char** argv) {
   createTrackbar("Sigma: ", "Threshold", nullptr, 100, trackBarChangeSigma, (void*) my_pane);
   setTrackbarPos("Sigma: ", "Threshold", my_pane->sigma);
 
-  createTrackbar("Hough Threshold: ", "Threshold", nullptr, 300, trackBarChangeHough, (void*) my_pane);
+  createTrackbar("Hough Threshold: ", "Threshold", nullptr, 600, trackBarChangeHough, (void*) my_pane);
   setTrackbarPos("Hough Threshold: ", "Threshold", my_pane->hough);
 
   createTrackbar("Rads hough: ", "Threshold", nullptr, 180, trackBarChangeRads, (void*) my_pane);

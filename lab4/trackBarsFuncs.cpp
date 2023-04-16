@@ -22,13 +22,18 @@ void trackBarChangeThreshold(int pos, void* userdata) {
 
   // Displaying hough lines [TODO]
   Mat hough_lines = event->image.clone();
-  for (int i = 0; i < lines.size(); i++) {
-    float rho = lines[i][0], theta = lines[i][1];
-    Point a(0, static_cast<int>(rho / std::sin(theta)));
-    Point b(static_cast<int>(rho / std::cos(theta)), 0);
-    line(hough_lines, a, b, Scalar(0,0,255));
+  for( size_t i = 0; i < lines.size(); i++ )
+  {
+     float rho = lines[i][0], theta = lines[i][1];
+     Point pt1, pt2;
+     double a = cos(theta), b = sin(theta);
+     double x0 = a*rho, y0 = b*rho;
+     pt1.x = cvRound(x0 + 10000*(-b));
+     pt1.y = cvRound(y0 + 10000*(a));
+     pt2.x = cvRound(x0 - 10000*(-b));
+     pt2.y = cvRound(y0 - 10000*(a));
+     line(hough_lines, pt1, pt2, Scalar(0,0,255));
   }
-
   imshow("Threshold", hough_lines);
 
   return;
@@ -48,13 +53,18 @@ void trackBarChangeSigma(int pos, void* userdata) {
 
   // Displaying hough lines [TODO]
   Mat hough_lines = event->image.clone();
-  for (int i = 0; i < lines.size(); i++) {
-    float rho = lines[i][0], theta = lines[i][1];
-    Point a(0, static_cast<int>(rho / std::sin(theta)));
-    Point b(static_cast<int>(rho / std::cos(theta)), 0);
-    line(hough_lines, a, b, Scalar(0,0,255));
+  for( size_t i = 0; i < lines.size(); i++ )
+  {
+     float rho = lines[i][0], theta = lines[i][1];
+     Point pt1, pt2;
+     double a = cos(theta), b = sin(theta);
+     double x0 = a*rho, y0 = b*rho;
+     pt1.x = cvRound(x0 + 10000*(-b));
+     pt1.y = cvRound(y0 + 10000*(a));
+     pt2.x = cvRound(x0 - 10000*(-b));
+     pt2.y = cvRound(y0 - 10000*(a));
+     line(hough_lines, pt1, pt2, Scalar(0,0,255));
   }
-
   imshow("Threshold", hough_lines);
 
   return;
@@ -74,11 +84,17 @@ void trackBarChangeHough(int pos, void* userdata) {
 
   // Displaying hough lines [TODO]
   Mat hough_lines = event->image.clone();
-  for (int i = 0; i < lines.size(); i++) {
-    float rho = lines[i][0], theta = lines[i][1];
-    Point a(0, static_cast<int>(rho / std::sin(theta)));
-    Point b(static_cast<int>(rho / std::cos(theta)), 0);
-    line(hough_lines, a, b, Scalar(0,0,255));
+  for( size_t i = 0; i < lines.size(); i++ )
+  {
+     float rho = lines[i][0], theta = lines[i][1];
+     Point pt1, pt2;
+     double a = cos(theta), b = sin(theta);
+     double x0 = a*rho, y0 = b*rho;
+     pt1.x = cvRound(x0 + 10000*(-b));
+     pt1.y = cvRound(y0 + 10000*(a));
+     pt2.x = cvRound(x0 - 10000*(-b));
+     pt2.y = cvRound(y0 - 10000*(a));
+     line(hough_lines, pt1, pt2, Scalar(0,0,255));
   }
 
   imshow("Threshold", hough_lines);
@@ -99,13 +115,19 @@ void trackBarChangeRads(int pos, void* userdata) {
 
   // Displaying hough lines [TODO]
   Mat hough_lines = event->image.clone();
-  for (int i = 0; i < lines.size(); i++) {
-    float rho = lines[i][0], theta = lines[i][1];
-    Point a(0, static_cast<int>(rho / std::sin(theta)));
-    Point b(static_cast<int>(rho / std::cos(theta)), 0);
-    line(hough_lines, a, b, Scalar(0,0,255));
+  for( size_t i = 0; i < lines.size(); i++ )
+  {
+     float rho = lines[i][0], theta = lines[i][1];
+     Point pt1, pt2;
+     double a = cos(theta), b = sin(theta);
+     double x0 = a*rho, y0 = b*rho;
+     pt1.x = cvRound(x0 + 10000*(-b));
+     pt1.y = cvRound(y0 + 10000*(a));
+     pt2.x = cvRound(x0 - 10000*(-b));
+     pt2.y = cvRound(y0 - 10000*(a));
+     line(hough_lines, pt1, pt2, Scalar(0,0,255));
   }
-
   imshow("Threshold", hough_lines);
+  
   return;
 }
