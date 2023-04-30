@@ -26,9 +26,9 @@ int main (int argc, char** argv) {
 
   // Detecting circles
   std::vector<Vec3f> circles;
-  HoughCircles(gray_scale, circles, HOUGH_GRADIENT, 1,
-    gray_scale.rows/32,
-    100, 30, 1, 50
+  HoughCircles(gray_scale, circles, HOUGH_GRADIENT, 2,
+    gray_scale.rows/6,
+    300, 30, 0, 12
   );
   for( size_t i = 0; i < circles.size(); i++ ) {
     Vec3i c = circles[i];
